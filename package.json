@@ -66,6 +66,7 @@
     "browser": "browserify --standalone fluent cjs/index.js -o fluent.js && uglifyjs fluent.js --compress --mangle -o fluent.min.js",
     "build_org": "npm run compile && npm run browser",
     "build": "npm run compile",
+    "prepare": "npm run compile",
     "test": "npm run lint && npm run build && mocha test -R spec",
     "preversion": "npm run test && npm run build && git push",
     "postversion": "git push && git push --tags"
